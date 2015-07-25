@@ -1,4 +1,7 @@
-euclid
+mathematics
 ===
 
-Takes two integers and returns their lowest common denominator. Real simple stuff.
+A variety of implementations of mathematical algorithms.
+
+* Euclidean Algorithm
+* Pollard's rho algorithm

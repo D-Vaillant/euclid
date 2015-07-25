@@ -1,9 +1,12 @@
 import sys
 
 def gcd(x, y):
-    "Runs the Euclidean algorithm on two integers."
-  # if not( isinstance(x, int) and isinstance(y, int) ):  Unneeded due to processing in entry.
-  #     raise ValueError('Must be integers.')
+    if not y: return x
+    z = x % y
+    return gcd(y, z)
+
+def iter_gcd(x, y):
+    """ Runs the Euclidean algorithm on two integers. """
     if x < 1 or y < 1:
         raise ValueError('Must be positive integers.')
     if x == y:
@@ -30,10 +33,10 @@ def gcd(x, y):
     return b
          
 def announce(r, x, y):
-    print 'The greatest common factor of '+str(x)+' and '+str(y)+' is '+str(r)+'.'
+    print('The greatest common factor of {} and {} is {}.'.format(x, y, r))
 
 def main():
-    s = raw_input("Please enter two integers, separated by a space: ")
+    s = input("Please enter two integers, separated by a space: ")
     l = []
     for t in s.split(): # Processes string into list of integers.
         try:
@@ -42,4 +45,3 @@ def main():
             pass
     gcd(l[0], l[1])
 
-main()
